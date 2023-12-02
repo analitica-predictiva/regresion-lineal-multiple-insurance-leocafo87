@@ -28,13 +28,10 @@ def pregunta_02():
     Preparación de los conjuntos de datos.
     -------------------------------------------------------------------------------------
     """
-
     # train_test_split
     from sklearn.model_selection import train_test_split
-
     # Cargue los datos y asigne los resultados a `X` y `y`.
     X, y = pregunta_01()
-
     # entrenamiento y prueba. 
     # aleatorios es 12345. 
     # 300 patrones para la muestra de prueba.
@@ -42,7 +39,6 @@ def pregunta_02():
         X, y, test_size=300, random_state=12345
     )
     return X_train, X_test, y_train, y_test
-
 
 def pregunta_03():
     """
@@ -112,7 +108,6 @@ def pregunta_03():
     # Retorne el mejor modelo
     return gridSearchCV
 
-
 def pregunta_04():
     """
     Evaluación del modelo
@@ -134,16 +129,13 @@ def pregunta_04():
 
     # Compute el error cuadratico medio de entrenamiento y prueba. Redondee los
     # valores a dos decimales.
-
     mse_train = mean_squared_error(
         y_train,
         y_train_pred,
     ).round(2)
-
     mse_test = mean_squared_error(
         y_test,
         y_test_pred,
     ).round(2)
-
     # Retorne el error cuadrático medio para entrenamiento y prueba
     return mse_train, mse_test
